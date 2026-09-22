@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 580">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap');
+    text { font-family: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', -apple-system, sans-serif; }
+  </style>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22d3ee"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fbbf24"/>
+    </marker>
+    <marker id="arrow-emerald" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34d399"/>
+    </marker>
+    <marker id="arrow-slate" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrow-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fb7185"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="660" height="580" fill="#0f172a"/>
+  <rect width="660" height="580" fill="url(#grid)"/>
+
+  <!-- Title -->
+  <text x="330" y="30" fill="#f1f5f9" font-size="17" font-weight="700" text-anchor="middle">Meeting Loop State Machine</text>
+  <text x="330" y="47" fill="#64748b" font-size="9" text-anchor="middle">AI agents automatically cycle through discussion rounds</text>
+
+  <!-- ============ ARROWS (behind nodes) ============ -->
+
+  <!-- ① thinking → competing  (amber, curve down-left) -->
+  <path d="M 265 100 C 200 128, 140 175, 125 218" fill="none" stroke="#fbbf24" stroke-width="1.8" marker-end="url(#arrow-amber)"/>
+  <text x="170" y="168" fill="#fbbf24" font-size="9" font-weight="600">want=true · raises hand</text>
+
+  <!-- ② competing → speaking  (emerald, straight horizontal across middle) -->
+  <line x1="205" y1="250" x2="435" y2="250" stroke="#34d399" stroke-width="1.8" marker-end="url(#arrow-emerald)"/>
+  <text x="320" y="242" fill="#34d399" font-size="9" font-weight="600" text-anchor="middle">one speaker selected at random</text>
+
+  <!-- ③ speaking → thinking  (cyan, right outside lane x=560, enters right side of thinking) -->
+  <path d="M 518 220 L 560 220 L 560 91 L 420 91" fill="none" stroke="#22d3ee" stroke-width="1.8" marker-end="url(#arrow-cyan)"/>
+  <text x="548" y="158" fill="#22d3ee" font-size="8" font-weight="600" text-anchor="end" transform="rotate(-90, 548, 158)">speech ends → back to thinking</text>
+
+  <!-- ④ thinking → idle  (rose dashed, right outer lane x=620, enters top of idle) -->
+  <path d="M 395 100 Q 580 115 620 200 L 620 430 Q 620 440 610 440 L 420 440" fill="none" stroke="#fb7185" stroke-width="1.6" stroke-dasharray="6,3" marker-end="url(#arrow-rose)"/>
+  <text x="605" y="310" fill="#fb7185" font-size="8" font-weight="600" text-anchor="end" transform="rotate(-90, 605, 310)">no hands raised → waiting for you</text>
+
+  <!-- ⑤ idle → thinking  (slate, left outer lane x=40, enters left of thinking) -->
+  <path d="M 265 440 L 40 440 L 40 70 Q 40 60 50 60 L 240 60" fill="none" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#arrow-slate)"/>
+  <text x="55" y="280" fill="#94a3b8" font-size="8" font-weight="600" text-anchor="middle" transform="rotate(-90, 55, 280)">you speak → new thinking round</text>
+
+  <!-- ============ NODES ============ -->
+
+  <!-- thinking (top center) — cyan -->
+  <rect x="240" y="60" width="180" height="62" rx="10" fill="#0f172a"/>
+  <rect x="240" y="60" width="180" height="62" rx="10" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="2"/>
+  <text x="330" y="86" fill="#22d3ee" font-size="13" font-weight="700" text-anchor="middle">thinking</text>
+  <text x="330" y="104" fill="#64748b" font-size="9" text-anchor="middle">parallel thinking · decide to speak</text>
+
+  <!-- competing (middle left) — amber -->
+  <rect x="40" y="220" width="165" height="62" rx="10" fill="#0f172a"/>
+  <rect x="40" y="220" width="165" height="62" rx="10" fill="rgba(120,53,15,0.3)" stroke="#fbbf24" stroke-width="2"/>
+  <text x="122" y="246" fill="#fbbf24" font-size="13" font-weight="700" text-anchor="middle">competing</text>
+  <text x="122" y="264" fill="#64748b" font-size="9" text-anchor="middle">hand raised · fighting for floor</text>
+
+  <!-- speaking (middle right) — emerald -->
+  <rect x="435" y="220" width="165" height="62" rx="10" fill="#0f172a"/>
+  <rect x="435" y="220" width="165" height="62" rx="10" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="2"/>
+  <text x="518" y="246" fill="#34d399" font-size="13" font-weight="700" text-anchor="middle">speaking</text>
+  <text x="518" y="264" fill="#64748b" font-size="9" text-anchor="middle">typewriter output · others listen</text>
+
+  <!-- idle (bottom center) — slate pill -->
+  <rect x="240" y="410" width="180" height="62" rx="30" fill="#0f172a"/>
+  <rect x="240" y="410" width="180" height="62" rx="30" fill="rgba(30,41,59,0.5)" stroke="#94a3b8" stroke-width="2"/>
+  <text x="330" y="436" fill="#e2e8f0" font-size="13" font-weight="700" text-anchor="middle">idle</text>
+  <text x="330" y="454" fill="#64748b" font-size="9" text-anchor="middle">silent / listening / waiting</text>
+
+  <!-- Legend -->
+  <line x1="40" y1="505" x2="620" y2="505" stroke="#1e293b" stroke-width="1"/>
+  <text x="40" y="525" fill="#64748b" font-size="8">Top-level phase: idle | thinking | competing | speaking　　Meeting status: setup | running | paused | ended</text>
+  <text x="40" y="545" fill="#64748b" font-size="8">
+    <tspan fill="#34d399">■</tspan> speech delivery　　
+    <tspan fill="#22d3ee">■</tspan> return after speech　　
+    <tspan fill="#fb7185">━ ━</tspan> no hands raised (waiting for host)　　
+    <tspan fill="#94a3b8">■</tspan> host interject triggers new round
+  </text>
+  <text x="40" y="565" fill="#475569" font-size="8">Stopped state: others stop and listen while one agent speaks</text>
+</svg>
