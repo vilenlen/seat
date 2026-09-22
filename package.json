@@ -1,0 +1,15 @@
+{
+  "name": "yuanzhuo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "圆桌会 · 多角色 AI 会议模拟（托管订阅版）",
+  "scripts": {
+    "dev": "node bridge.mjs",
+    "vercel:dev": "vercel dev",
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}

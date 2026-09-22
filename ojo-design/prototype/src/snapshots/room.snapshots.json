@@ -1,0 +1,211 @@
+{
+  "page": "room",
+  "snapshots": [
+    {
+      "id": "room-baseline",
+      "name": "Meeting Startup",
+      "purpose": "Baseline state: meeting initialized, no messages yet, phase idle, awaiting simulation start. Demonstrates default meeting metadata and empty message flow.",
+      "priority": "p0",
+      "state": {
+        "title": "Q3 延期决策会议",
+        "topic": "支付SDK对接延期影响评估",
+        "participants": [
+          {
+            "id": "human",
+            "name": "你",
+            "duty": "主持人",
+            "color": "hue-0",
+            "status": "idle"
+          },
+          {
+            "id": "r1",
+            "name": "PM 李",
+            "duty": "产品经理",
+            "color": "hue-210",
+            "status": "idle"
+          },
+          {
+            "id": "r2",
+            "name": "Tech 王",
+            "duty": "技术负责人",
+            "color": "hue-150",
+            "status": "idle"
+          },
+          {
+            "id": "r3",
+            "name": "Design 张",
+            "duty": "设计负责人",
+            "color": "hue-320",
+            "status": "idle"
+          }
+        ],
+        "messages": [],
+        "phase": "idle",
+        "currentSpeakerId": null
+      }
+    },
+    {
+      "id": "room-thinking-phase",
+      "name": "Thinking Phase Active",
+      "purpose": "Show thinking phase in metronome, participants with thinking status, baseline messages list. Demonstrates early discussion stage before competition.",
+      "priority": "p1",
+      "state": {
+        "title": "Q3 延期决策会议",
+        "topic": "支付SDK对接延期影响评估",
+        "participants": [
+          {
+            "id": "human",
+            "name": "你",
+            "duty": "主持人",
+            "color": "hue-0",
+            "status": "idle"
+          },
+          {
+            "id": "r1",
+            "name": "PM 李",
+            "duty": "产品经理",
+            "color": "hue-210",
+            "status": "thinking"
+          },
+          {
+            "id": "r2",
+            "name": "Tech 王",
+            "duty": "技术负责人",
+            "color": "hue-150",
+            "status": "thinking"
+          },
+          {
+            "id": "r3",
+            "name": "Design 张",
+            "duty": "设计负责人",
+            "color": "hue-320",
+            "status": "thinking"
+          }
+        ],
+        "messages": [
+          {
+            "id": "sys-1",
+            "roleId": "system",
+            "text": "会议开始",
+            "time": "14:30",
+            "type": "system"
+          }
+        ],
+        "phase": "thinking",
+        "currentSpeakerId": null
+      }
+    },
+    {
+      "id": "room-speaking-phase",
+      "name": "Speaking Phase With Active Speaker",
+      "purpose": "Show speaking phase with one participant actively speaking, speaker lock chip visible, participant badge highlighted. Demonstrates mid-discussion active speaker state.",
+      "priority": "p1",
+      "state": {
+        "title": "Q3 延期决策会议",
+        "topic": "支付SDK对接延期影响评估",
+        "participants": [
+          {
+            "id": "human",
+            "name": "你",
+            "duty": "主持人",
+            "color": "hue-0",
+            "status": "idle"
+          },
+          {
+            "id": "r1",
+            "name": "PM 李",
+            "duty": "产品经理",
+            "color": "hue-210",
+            "status": "speaking"
+          },
+          {
+            "id": "r2",
+            "name": "Tech 王",
+            "duty": "技术负责人",
+            "color": "hue-150",
+            "status": "idle"
+          },
+          {
+            "id": "r3",
+            "name": "Design 张",
+            "duty": "设计负责人",
+            "color": "hue-320",
+            "status": "idle"
+          }
+        ],
+        "messages": [
+          {
+            "id": "sys-1",
+            "roleId": "system",
+            "text": "PM 李 获得本轮发言权",
+            "time": "14:32",
+            "type": "system"
+          },
+          {
+            "id": "msg-1",
+            "roleId": "r1",
+            "text": "延期三周是对的。支付链路不通，上线就是灾难。",
+            "time": "14:32",
+            "type": "ai",
+            "thinkingText": "评估了目前的风险因素，认为质量优先级高于时间。"
+          }
+        ],
+        "phase": "speaking",
+        "currentSpeakerId": "r1"
+      }
+    },
+    {
+      "id": "room-with-human-message",
+      "name": "Human Participant Message",
+      "purpose": "Show human participant (host) contributing to discussion. Demonstrates how human input messages are rendered differently from AI messages with right-aligned styling.",
+      "priority": "p1",
+      "state": {
+        "title": "Q3 延期决策会议",
+        "topic": "支付SDK对接延期影响评估",
+        "participants": [
+          {
+            "id": "human",
+            "name": "你",
+            "duty": "主持人",
+            "color": "hue-0",
+            "status": "idle"
+          },
+          {
+            "id": "r1",
+            "name": "PM 李",
+            "duty": "产品经理",
+            "color": "hue-210",
+            "status": "idle"
+          }
+        ],
+        "messages": [
+          {
+            "id": "sys-1",
+            "roleId": "system",
+            "text": "会议开始",
+            "time": "14:30",
+            "type": "system"
+          },
+          {
+            "id": "msg-ai-1",
+            "roleId": "r1",
+            "text": "延期三周是对的。支付链路不通，上线就是灾难。",
+            "time": "14:32",
+            "type": "ai",
+            "thinkingText": "评估了目前的风险因素，认为质量优先级高于时间。"
+          },
+          {
+            "id": "msg-human-1",
+            "roleId": "human",
+            "text": "同意各位的观点。那我们定下来：延期三周，用这段时间完成支付和测试。",
+            "time": "14:34",
+            "type": "human"
+          }
+        ],
+        "phase": "idle",
+        "currentSpeakerId": null
+      }
+    }
+  ],
+  "_zkStateBundleSha256": "27e0ad817afdc7d77c8ca4ec67c7763f2bd5b9b7a3689f49cdfd79ca11bb58bb"
+}

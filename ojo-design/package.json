@@ -1,0 +1,29 @@
+{
+  "name": "design-template-workspace",
+  "private": true,
+  "version": "0.0.21",
+  "type": "module",
+  "scripts": {
+    "dev:prototype": "pnpm --filter prototype dev",
+    "dev:business": "pnpm --filter business dev",
+    "dev:all": "pnpm -r --parallel --filter prototype --filter business dev",
+    "build:prototype": "pnpm --filter prototype build",
+    "build:business": "pnpm --filter business build",
+    "build:all": "pnpm -r --filter prototype --filter business build",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "gen:supabase-api": "node ./lib/scripts/generate-supabase-api.mjs",
+    "test:supabase-api": "tsx --test ./lib/scripts/generate-supabase-api.test.mjs ./lib/api-client-react/src/generated/runtime.test.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.58.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "react": "18.3.1",
+      "react-dom": "18.3.1"
+    }
+  }
+}

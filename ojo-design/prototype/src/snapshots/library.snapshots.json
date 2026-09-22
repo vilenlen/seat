@@ -1,0 +1,143 @@
+{
+  "page": "library",
+  "snapshots": [
+    {
+      "id": "library-baseline-all-roles",
+      "name": "All Roles (Default)",
+      "purpose": "Default page state showing all roles in a flat list without group filtering. Demonstrates the full role gallery and sidebar with 'All Roles' selected.",
+      "priority": "p0",
+      "state": {
+        "activeGroupId": null,
+        "roles": [
+          {
+            "id": "role-1",
+            "name": "测试角色1",
+            "duty": "测试职位",
+            "personality": "热情友好",
+            "style": "专业",
+            "color": "hue-210",
+            "groupId": "group-a"
+          },
+          {
+            "id": "role-2",
+            "name": "测试角色2",
+            "duty": "销售代表",
+            "personality": "积极进取",
+            "style": "商业",
+            "color": "hue-150",
+            "groupId": "group-a"
+          },
+          {
+            "id": "role-3",
+            "name": "未分组角色",
+            "duty": "独立顾问",
+            "personality": "独立思考",
+            "style": "咨询",
+            "color": "hue-320",
+            "groupId": ""
+          }
+        ],
+        "groups": [
+          {
+            "id": "group-a",
+            "name": "销售团队"
+          },
+          {
+            "id": "group-b",
+            "name": "技术团队"
+          }
+        ]
+      }
+    },
+    {
+      "id": "library-group-selected",
+      "name": "Group Filter Active",
+      "purpose": "Group filter applied (e.g., 'Sales Team' selected). Page title changes to group name; sidebar shows group as active with highlight; grid displays only roles in that group.",
+      "priority": "p1",
+      "state": {
+        "activeGroupId": "group-a",
+        "roles": [
+          {
+            "id": "role-1",
+            "name": "测试角色1",
+            "duty": "测试职位",
+            "personality": "热情友好",
+            "style": "专业",
+            "color": "hue-210",
+            "groupId": "group-a"
+          },
+          {
+            "id": "role-2",
+            "name": "测试角色2",
+            "duty": "销售代表",
+            "personality": "积极进取",
+            "style": "商业",
+            "color": "hue-150",
+            "groupId": "group-a"
+          }
+        ],
+        "groups": [
+          {
+            "id": "group-a",
+            "name": "销售团队"
+          },
+          {
+            "id": "group-b",
+            "name": "技术团队"
+          }
+        ]
+      }
+    },
+    {
+      "id": "library-unassigned-roles",
+      "name": "Unassigned Roles",
+      "purpose": "Unassigned filter active: page title becomes '未分组'; sidebar highlights 'Unassigned' button; grid shows only roles with empty groupId.",
+      "priority": "p1",
+      "state": {
+        "activeGroupId": "unassigned",
+        "roles": [
+          {
+            "id": "role-3",
+            "name": "未分组角色",
+            "duty": "独立顾问",
+            "personality": "独立思考",
+            "style": "咨询",
+            "color": "hue-320",
+            "groupId": ""
+          }
+        ],
+        "groups": [
+          {
+            "id": "group-a",
+            "name": "销售团队"
+          },
+          {
+            "id": "group-b",
+            "name": "技术团队"
+          }
+        ]
+      }
+    },
+    {
+      "id": "library-empty-state",
+      "name": "Empty Roles List",
+      "purpose": "No roles to display for the active group filter. Grid shows only the 'Add New Role' placeholder card; demonstrates the empty content state.",
+      "priority": "p2",
+      "state": {
+        "activeGroupId": "group-b",
+        "roles": [],
+        "groups": [
+          {
+            "id": "group-a",
+            "name": "销售团队"
+          },
+          {
+            "id": "group-b",
+            "name": "技术团队"
+          }
+        ]
+      }
+    }
+  ],
+  "_zkStateBundleSha256": "2c9bd20ba14070ec1c55ef7e492a0107506f24bcb9977c3fe929db82c171cb6f"
+}

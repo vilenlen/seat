@@ -1,0 +1,48 @@
+{
+  "page": "setup",
+  "snapshots": [
+    {
+      "id": "setup-baseline",
+      "name": "Initial Setup Form",
+      "purpose": "Default state with empty form fields, no roles selected, and deep thinking disabled. Establishes the baseline form readiness.",
+      "priority": "p0",
+      "state": {
+        "title": "",
+        "topic": "",
+        "background": "",
+        "selectedRoleIds": [],
+        "deepThinking": false
+      }
+    },
+    {
+      "id": "setup-filled-form",
+      "name": "Completed Setup Form",
+      "purpose": "Form fully populated with meeting title, topic, background, and roles selected. Demonstrates valid, ready-to-submit state.",
+      "priority": "p1",
+      "state": {
+        "title": "Q3 产品路线复盘",
+        "topic": "是否延期发布新版本",
+        "background": "新竞品上市，用户反馈延期需求",
+        "selectedRoleIds": [
+          "role-1",
+          "role-2"
+        ],
+        "deepThinking": true
+      }
+    },
+    {
+      "id": "setup-deep-thinking-enabled",
+      "name": "Deep Thinking Enabled",
+      "purpose": "Deep thinking mode enabled with minimal other state; shows parameter configuration impact on form state.",
+      "priority": "p2",
+      "state": {
+        "title": "",
+        "topic": "",
+        "background": "",
+        "selectedRoleIds": [],
+        "deepThinking": true
+      }
+    }
+  ],
+  "_zkStateBundleSha256": "ae1b6e78a0b149a152ff7634280cdea76092489919364b6663c2e1117b0616c5"
+}

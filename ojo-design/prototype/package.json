@@ -1,0 +1,40 @@
+{
+  "name": "prototype",
+  "version": "0.1.31",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "dev": "pnpm run typecheck && tsx node_modules/@rspack/cli/bin/rspack serve",
+    "build": "pnpm run typecheck && tsx node_modules/@rspack/cli/bin/rspack build",
+    "build:bundle": "tsx ./tools/build-page-bundle.ts",
+    "theme:classes": "npx --yes tsx ./tools/build-theme-classes.ts",
+    "test": "npx --yes tsx --test ./tools/*.test.ts ./tools/*.test.mjs",
+    "preview": "tsx node_modules/@rspack/cli/bin/rspack preview"
+  },
+  "dependencies": {
+    "@rspack/cli": "1.7.2",
+    "@rspack/core": "1.7.2",
+    "@workspace/api-client-react": "workspace:*",
+    "autoprefixer": "10.4.23",
+    "clsx": "2.1.1",
+    "css-loader": "7.1.2",
+    "framer-motion": "12.29.0",
+    "lucide-react": "0.562.0",
+    "postcss": "8.5.6",
+    "postcss-loader": "8.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "style-loader": "4.0.0",
+    "tailwind-merge": "3.4.0",
+    "tailwindcss": "3.4.19",
+    "tsx": "4.21.0",
+    "typescript": "5.9.3",
+    "zustand": "4.5.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.3.29",
+    "@types/react-dom": "^18.3.7"
+  }
+}
